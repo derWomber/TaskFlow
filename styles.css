@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
+
+:root {
+  /* backgrounds */
+  --bg-page: #f0f2f6;
+  --bg-surface: #ffffff;
+  --bg-surface2: #f0f2f5;
+
+  /* text */
+  --text-main: #0f1117;
+  --text-muted: #5a6072;
+  --text-hint: #9199ab;
+
+  /* border */
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  /* blue (primary) */
+  --blue: #1a6fd4;
+  --blue-light: #e8f0fc;
+
+  /* teal (secondary) */
+  --teal: #0ea5a0;
+  --teal-light: #e0f5f4;
+
+  /* green (success) */
+  --green: #16a34a;
+  --green-light: #dcfce7;
+
+  /* yellow (warning) */
+  --yellow: #d97706;
+  --yellow-light: #fef3c7;
+
+  /* red (danger) */
+  --red: #dc2626;
+  --red-light: #fee2e2;
+}
+
+body.dark {
+  /* backgrounds */
+  --bg-page: #0d0f14;
+  --bg-surface: #161920;
+  --bg-surface2: #1e2230;
+
+  /* text */
+  --text-main: #e8eaf0;
+  --text-muted: #8b93a8;
+  --text-hint: #555e73;
+
+  /* border */
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.12);
+
+  /* blue (primary) */
+  --blue: #4d8fe8;
+  --blue-light: #1a2a44;
+
+  /* teal (secondary) */
+  --teal: #2dd4d0;
+  --teal-light: #0d2e2d;
+
+  /* green (success) */
+  --green: #4ade80;
+  --green-light: #0d2a17;
+
+  /* yellow (warning) */
+  --yellow: #f59e0b;
+  --yellow-light: #2a1f07;
+
+  /* red (danger) */
+  --red: #f87171;
+  --red-light: #2d1010;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: grey;
+}
+
+.main {
+  width: calc(100% - 300px);
+  height: 100vh;
+  background-color: red;
+}
+
+.hideOneDeskteop{
+    display: none;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main {
+    width: 100%;
+  }
+}
