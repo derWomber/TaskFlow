@@ -12,7 +12,7 @@
   --text-hint: #9199ab;
 
   /* border */
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(100, 100, 100, 0.212);
   --border-strong: rgba(0, 0, 0, 0.14);
 
   /* blue (primary) */
@@ -76,24 +76,26 @@ body.dark {
   padding: 0;
   margin: 0;
   font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow-x: hidden ;
 }
 
 .sidebar {
-  width: 300px;
+  width: 200px;
   height: 100vh;
   background-color: var(--bg-surface);
 }
 
 .main {
-  width: calc(100% - 300px);
+  width: calc(100% - 200px);
   height: 100vh;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-surface2);
   border-left: var(--border) 1px solid;
 }
 
@@ -123,6 +125,7 @@ background-color: transparent;
     align-items: center;
     justify-content: space-between;
     border-bottom: var(--border) 1px solid;
+    background-color: var(--bg-surface);
 }
 
 .main-top-pannel button{
@@ -143,6 +146,69 @@ background-color: transparent;
     font-size: medium;
 }
 
+/*input-container*/
+
+.input-container {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.input-container input{
+    width: calc(100% - 50px);
+    height: 40px;
+    font-size: small;
+    border-radius: 8px;
+    border: var(--border) 1px solid;
+    padding: 10px 15px;
+}
+
+.input-container .add-task{
+    width: 60px;
+    padding: 3px 5px;
+    border-radius: 8px;
+    background-color: var(--blue);
+    color: var(--bg-page);
+    border: none;
+
+}
+
+/*task-calculator*/
+
+.task-calculator{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.task-calculator div{
+    background-color: #0d0f14;
+    width: 30%;
+    height: 100px;
+    background-color: var(--bg-surface);
+    padding: 18px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.task-calculator div h4{
+    font-size: small;
+    color: var(--text-hint);
+}
+
+.task-inprogress h5{
+    color: var(--yellow);
+}
+
+.task-done h5{
+    color: var(--green);
+}
+
 .hideOneDeskteop {
   display: none;
 }
@@ -157,11 +223,11 @@ background-color: transparent;
     transition: transform 0.3s ease;
     z-index: 100;
     border-right: var(--border) solid 1px;
-    opacity: 0;
+    
   }
   .sidebar.show {
     transform: translateX(0);
-    opacity: 1;
+    
   }
 
   .main {
