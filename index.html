@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,6 +71,7 @@
       <div class="main-top-pannel">
         <button id="sidebarButtonOpen" class="hideOneDeskteop">
           <svg
+          styles="border: 1px solid transparent;"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -83,14 +85,14 @@
             <g id="SVGRepo_iconCarrier">
               <path
                 d="M5 7H19"
-                stroke="#000000"
+                stroke="var(--text-main)"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               ></path>
               <path
                 d="M5 12L19 12"
-                stroke="#000000"
+                stroke="var(--text-main)"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -106,16 +108,30 @@
           </svg>
         </button>
         <h3>My Tasks</h3>
-        <button class="theme" id="theme">🌙</button>
+        <button class="theme" id="theme" onclick="darkModus()">🌙</button>
       </div>
       <div class="input-container">
         <input
           type="text"
           id="inputField"
           placeholder="Add new Task..."
+          autocomplete="off"
           required
         />
         <button class="add-task">+ add</button>
+        <button class="advanced-task" id="advancedSettingsButton"">Advanced</button>
+      </div>
+
+      <div class="advanced-settings" id="advancedSettings"><input
+          type="text"
+          id="inputField"
+          placeholder="Add Task discription..."
+          autocomplete="off"
+          required
+        />
+        <h3 class="priority-text"> High Priority</h3>
+        <input type="checkbox" id="priorityCheck">
+
       </div>
 
       <div class="task-calculator">

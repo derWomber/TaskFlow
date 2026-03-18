@@ -84,12 +84,14 @@ body {
   height: 100vh;
   display: flex;
   overflow-x: hidden;
+  transition: 0.5s ease-in-out;
 }
 
 .sidebar {
   width: 200px;
   height: 100vh;
   background-color: var(--bg-surface);
+  transition: 0.2s ease;
 }
 
 .main {
@@ -106,7 +108,9 @@ nav {
   align-items: center;
   border-bottom: var(--border) 1px solid;
   gap: 10px;
+  transition: 0.2s ease;
 }
+
 nav h3 {
   color: var(--text-main);
 }
@@ -125,6 +129,7 @@ nav button {
   justify-content: space-between;
   border-bottom: var(--border) 1px solid;
   background-color: var(--bg-surface);
+  transition: 0.2s ease;
 }
 
 .main-top-pannel button {
@@ -160,7 +165,9 @@ nav button {
   font-size: small;
   border-radius: 8px;
   border: var(--border) 1px solid;
+  background-color: var(--bg-surface);
   padding: 10px 15px;
+  transition: 0.2s ease;
 }
 
 .input-container .add-task {
@@ -169,7 +176,100 @@ nav button {
   border-radius: 8px;
   background-color: var(--blue);
   color: var(--bg-page);
-  border: none;
+  border: 1px solid transparent;
+  transition:
+    border-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.input-container .add-task:hover {
+  background-color: rgb(0, 89, 255);
+  border-color: var(--border);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.input-container .advanced-task {
+  width: 80px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid transparent;
+  color: var(--text-main);
+  transition:
+    border-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.input-container .advanced-task:hover {
+  border-color: var(--border);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/*advanced-settings*/
+
+.advanced-settings {
+  display: flex;
+  max-height: 0;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: var(--bg-surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.advanced-settings input[type="text"] {
+  flex: 1;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.advanced-settings input[type="text"]:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-light);
+}
+
+.advanced-settings input[type="text"]::placeholder {
+  color: var(--text-hint);
+}
+
+.priority-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.advanced-settings input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--yellow);
+  cursor: pointer;
+}
+
+.advanced-settings.show {
+  display: flex;
+  opacity: 1;
+  max-height: 200px;
+  transform: translateY(0);
+  pointer-events: all;
 }
 
 /*task-calculator*/
@@ -178,7 +278,7 @@ nav button {
   width: 100%;
   padding: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -192,11 +292,16 @@ nav button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.4s ease;
 }
 
 .task-calculator div h4 {
   font-size: small;
   color: var(--text-hint);
+}
+
+.task-total {
+  color: var(--text-main);
 }
 
 .task-inprogress h5 {
@@ -225,18 +330,22 @@ nav button {
   transition: 0.2s ease;
 }
 
-.task:hover{
+.task:hover {
   border: var(--border-strong) 1px solid;
   transform: translateY(-2px);
+  cursor: pointer;
 }
 
 .task h4 {
   margin-right: auto;
+  color: var(--text-main);
 }
 
 .task .task-delete {
-  width: 20px;
+  width: 30px;
   border: 0px;
+  padding: 5px;
+  padding-top: 8px;
   border-radius: 8px;
   background-color: transparent;
   color: var(--text-main);
