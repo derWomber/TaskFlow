@@ -119,9 +119,28 @@
       </div>
 
       <div class="task-calculator">
-        <div class="task-total"><h4>Total</h4> <h5>0</h5></div>
-        <div class="task-inprogress"><h4>In Progress</h4> <h5>150</h5></div>
-        <div class="task-done"><h4>Done</h4> <h5>0</h5></div>
+        <div class="task-total"><h4>Total</h4> <h5 id="totalNumber">0</h5></div>
+        <div class="task-inprogress"><h4>In Progress</h4> <h5 id="inProgressNumber">150</h5></div>
+        <div class="task-done"><h4>Done</h4> <h5 id="doneNumber">0</h5></div>
+      </div>
+
+      <div class="taks-container" id="container">
+
+        <div class="task">
+            <h4>task example here</h4>
+            <select name="status" id="status">
+                <option value="done">Done</option>
+                <option value="inProgress">In Progress</option>
+                <option value="notDone">Not Done</option>
+                
+            </select>
+            <button class="task-delete" id="taskDelete">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z" fill="var(--text-main)"></path></g></svg>
+            </button>
+        </div>
+
+        
+
       </div>
 
     </div>
