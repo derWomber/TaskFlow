@@ -317,17 +317,40 @@ nav button {
 .taks-container {
   width: 100%;
   padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .task {
+  background-color: var(--bg-surface);
+  border-radius: 15px;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.main-task-container {
   display: flex;
   align-items: center;
   padding: 20px 18px;
-  border-radius: 15px;
-  gap: 20px;
-  background-color: var(--bg-surface);
-  border: 1px solid transparent;
-  transition: 0.2s ease;
+  border-radius: 15px 15px 0px 0px;
+  border-bottom: var(--border) 1px solid;
+}
+
+.main-task-container .svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-task-container svg {
+  width: 30px;
+  height: 30px;
+}
+
+.task .discripton {
+  padding: 20px 18px;
+  color: var(--text-muted);
 }
 
 .task:hover {
@@ -343,17 +366,55 @@ nav button {
 
 .task .task-delete {
   width: 30px;
-  border: 0px;
-  padding: 5px;
-  padding-top: 8px;
+  height: 30px;
+  margin-left: 5px;
+  border: none;
   border-radius: 8px;
   background-color: transparent;
-  color: var(--text-main);
+  color: var(--text-hint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .task .task-delete:hover {
   background-color: var(--red-light);
   color: var(--red);
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 6px 32px 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%239199ab' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+select:hover {
+  border-color: var(--border-strong);
+}
+
+select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-light);
+}
+
+option {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  padding: 8px;
 }
 
 .hideOneDeskteop {
