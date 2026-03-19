@@ -83,12 +83,14 @@ function addTask() {
     let task = tasks.find((t) => t.id === dateNow);
     task.status = select.value;
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    updateCounters()
   });
 
   localStorage.setItem("tasks", JSON.stringify(tasks))
   console.log("saved!", tasks);
 
   container.appendChild(taskElement);
+  updateCounters()
 }
 
 /* RenderingTasks */
@@ -135,9 +137,11 @@ function renderTask(task) {
     let foundTask = tasks.find((t) => t.id === dateNow);
     foundTask.status = select.value;
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    updateCounters()
   });
 
   container.appendChild(taskElement);
+  updateCounters()
 }
 
 function deleteTask(button) {
@@ -146,6 +150,13 @@ function deleteTask(button) {
   tasks = tasks.filter(t => t.id !== id);
   localStorage.setItem('tasks', JSON.stringify(tasks));
   taskElement.remove();
+  updateCounters()
+}
+
+function updateCounters() {
+  document.getElementById('totalNumber').textContent = tasks.length;
+  document.getElementById('inProgressNumber').textContent = tasks.filter(t => t.status === 'inProgress').length;
+  document.getElementById('doneNumber').textContent = tasks.filter(t => t.status === 'done').length;
 }
 
 function checkInput() {
@@ -168,7 +179,14 @@ function checkInput() {
 function onPageLoad() {
   let saved = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks = saved;
+  console.log(tasks)
   saved.forEach((task) => renderTask(task));
+  updateCounters()
 }
 
+
+
 window.onload = onPageLoad;
+
+
+
