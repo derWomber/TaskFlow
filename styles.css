@@ -122,6 +122,51 @@ nav button {
   background-color: transparent;
 }
 
+.sidebar-nav {
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-nav button {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  color: var(--text-muted);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav button:hover {
+  background-color: var(--bg-surface2);
+  color: var(--text-main);
+}
+
+.sidebar-nav button.active {
+  background-color: var(--teal-light);
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.sidebar-nav #deleteAllButton {
+  color: var(--red);
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 8px 8px;
+  padding-top: 12px;
+}
+
+.sidebar-nav #deleteAllButton:hover {
+  background-color: var(--red-light);
+  color: var(--red);
+}
+
 .main-top-pannel {
   padding: 8px 15px;
   display: flex;
@@ -168,6 +213,7 @@ nav button {
   background-color: var(--bg-surface);
   padding: 10px 15px;
   transition: 0.2s ease;
+  color: var(--text-main);
 }
 
 .input-container .add-task {
@@ -320,6 +366,8 @@ nav button {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  background-color: var(--bg-surface2);
+  border-left: var(--border) 1px solid;
 }
 
 .task {
@@ -362,6 +410,7 @@ nav button {
 .task h4 {
   margin-right: auto;
   color: var(--text-main);
+  overflow-wrap: break-word;
 }
 
 .task .task-delete {
@@ -376,7 +425,9 @@ nav button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .task .task-delete:hover {
@@ -398,7 +449,9 @@ select {
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%239199ab' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   outline: none;
 }
 
@@ -415,6 +468,20 @@ option {
   background-color: var(--bg-surface);
   color: var(--text-main);
   padding: 8px;
+}
+
+.task h4.done {
+  color: var(--green);
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.task h4.inprogress {
+  color: var(--yellow);
+}
+
+.task h4.not-done {
+  color: var(--text-main);
 }
 
 .hideOneDeskteop {

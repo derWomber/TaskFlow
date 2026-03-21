@@ -65,13 +65,21 @@
           </svg>
         </button>
       </nav>
+      <div class="sidebar-nav">
+        <button id="allTasks">All</button>
+        <button id="highPriorityfilter">High Priority</button>
+        <button id="completedTasks">Completed</button>
+        <button id="TasksInProgress">InProgress</button>
+        <button id="notCompletedTasks">Not Completed</button>
+        <button id="deleteAllButton">clear all</button>
+      </div>
     </div>
 
     <div class="main">
       <div class="main-top-pannel">
         <button id="sidebarButtonOpen" class="hideOneDeskteop">
           <svg
-          styles="border: 1px solid transparent;"
+            styles="border: 1px solid transparent;"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -119,35 +127,39 @@
           required
         />
         <button class="add-task" onclick="checkInput()">+ add</button>
-        <button class="advanced-task" id="advancedSettingsButton">Advanced</button>
+        <button class="advanced-task" id="advancedSettingsButton">
+          Advanced
+        </button>
       </div>
 
-      <div class="advanced-settings" id="advancedSettings"><input
+      <div class="advanced-settings" id="advancedSettings">
+        <input
           type="text"
           id="discriptionField"
           placeholder="Add Task discription..."
           autocomplete="off"
           required
         />
-        <h3 class="priority-text"> High Priority</h3>
-        <input type="checkbox" id="priorityCheck">
-
+        <h3 class="priority-text">High Priority</h3>
+        <input type="checkbox" id="priorityCheck" />
       </div>
 
       <div class="task-calculator">
-        <div class="task-total"><h4>Total</h4> <h5 id="totalNumber">10</h5></div>
-        <div class="task-inprogress"><h4>In Progress</h4> <h5 id="inProgressNumber">20</h5></div>
-        <div class="task-done"><h4>Done</h4> <h5 id="doneNumber">30</h5></div>
+        <div class="task-total">
+          <h4>Total</h4>
+          <h5 id="totalNumber"></h5>
+        </div>
+        <div class="task-inprogress">
+          <h4>In Progress</h4>
+          <h5 id="inProgressNumber"></h5>
+        </div>
+        <div class="task-done">
+          <h4>Done</h4>
+          <h5 id="doneNumber"></h5>
+        </div>
       </div>
 
-      <div class="taks-container" id="container">
-
-        
-          
-        
-
-      </div>
-
+      <div class="taks-container" id="container"></div>
     </div>
   </body>
 </html>
