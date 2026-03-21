@@ -222,27 +222,32 @@ let allTasks = document.getElementById("allTasks")
 let highPriorityfilter = document.getElementById("highPriorityfilter")
 
 completedTasksButton.addEventListener("click", function(){
-  setActiveFilter(this)
-  filterTasks("done")
+  setActiveFilter(this);
+  filterTasks("done");
+  sidebar.classList.remove("show");
 })
 
 TasksInProgress.addEventListener("click", function(){
-  setActiveFilter(this)
-  filterTasks("inProgress")
+  setActiveFilter(this);
+  filterTasks("inProgress");
+  sidebar.classList.remove("show");
 })
 
 notCompletedTasks.addEventListener("click", function(){
-  setActiveFilter(this)
-  filterTasks("notDone")
+  setActiveFilter(this);
+  filterTasks("notDone");
+  sidebar.classList.remove("show");
 })
 allTasks.addEventListener("click", function(){
-  setActiveFilter(this)
-  showAll()
+  setActiveFilter(this);
+  showAll();
+  sidebar.classList.remove("show");
 })
 
 highPriorityfilter.addEventListener("click", function(){
-  setActiveFilter(this)
-  highPriorityTasks()
+  setActiveFilter(this);
+  highPriorityTasks();
+  sidebar.classList.remove("show");
 })
 
 document.getElementById("inputField").addEventListener("keydown", function(e) {
