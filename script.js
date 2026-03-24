@@ -157,6 +157,23 @@ if (status === "done") h4.classList.add("done");
 else if (status === "inProgress") h4.classList.add("inprogress");
 else if (status === "notDone") h4.classList.add("not-done");
 
+  select.addEventListener("change", function () {
+  let status = select.value;
+  h4.classList.remove("done", "inprogress", "not-done");
+  if (status === "done") {
+    h4.classList.add("done");
+  } else if (status === "inProgress") {
+    h4.classList.add("inprogress");
+  } else if (status === "notDone") {
+    h4.classList.add("not-done");
+  }
+
+  let task = tasks.find((t) => t.id === dateNow);
+    task.status = select.value;
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    updateCounters()
+});
+
   container.appendChild(taskElement);
   updateCounters()
 }
