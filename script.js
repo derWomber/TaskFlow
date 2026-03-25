@@ -187,10 +187,20 @@ function deleteTask(button) {
   updateCounters()
 }
 
+function updatePlaceholder() {
+  let placeHolder = document.getElementById("taskPlaceHolder")
+  if (tasks.length === 0) {
+    placeHolder.classList.add("show");
+  } else {
+    placeHolder.classList.remove("show");
+  }
+}
+
 function updateCounters() {
   document.getElementById('totalNumber').textContent = tasks.length;
   document.getElementById('inProgressNumber').textContent = tasks.filter(t => t.status === 'inProgress').length;
   document.getElementById('doneNumber').textContent = tasks.filter(t => t.status === 'done').length;
+  updatePlaceholder()
 }
 
 function checkInput() {

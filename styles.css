@@ -484,6 +484,19 @@ option {
   color: var(--text-main);
 }
 
+.task-place-holder{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  height: 100px;
+  font-weight: bold;
+}
+
+.task-place-holder.show{
+  display: flex;
+}
+
 .hideOneDeskteop {
   display: none;
 }
