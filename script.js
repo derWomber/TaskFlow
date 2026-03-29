@@ -176,6 +176,7 @@ else if (status === "notDone") h4.classList.add("not-done");
 
   container.appendChild(taskElement);
   updateCounters()
+  updatePlaceholder()
 }
 
 function deleteTask(button) {
