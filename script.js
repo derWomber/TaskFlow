@@ -225,17 +225,20 @@ function filterTasks(status) {
   let filtered = tasks.filter(task => task.status === status);
   container.innerHTML = '';
   filtered.forEach(task => renderTask(task));
+  updatePlaceholder()
 }
 
 function highPriorityTasks() {
   let filtered = tasks.filter(task => task.priority === true);
   container.innerHTML = '';
   filtered.forEach(task => renderTask(task));
+  updatePlaceholder()
 }
 
 function showAll() {
   container.innerHTML = '';
   tasks.forEach(task => renderTask(task));
+  updatePlaceholder()
 }
 
 function setActiveFilter(btn) {
