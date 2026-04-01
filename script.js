@@ -171,11 +171,9 @@ else if (status === "notDone") h4.classList.add("not-done");
   let task = tasks.find((t) => t.id === dateNow);
     task.status = select.value;
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    updateCounters()
 });
 
   container.appendChild(taskElement);
-  updateCounters()
 }
 
 function deleteTask(button) {
@@ -235,6 +233,7 @@ function highPriorityTasks() {
 function showAll() {
   container.innerHTML = '';
   tasks.forEach(task => renderTask(task));
+    updateCounters()
 }
 
 function setActiveFilter(btn) {
