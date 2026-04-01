@@ -279,6 +279,10 @@ highPriorityfilter.addEventListener("click", function(){
 document.getElementById("inputField").addEventListener("keydown", function(e) {
   if (e.key === "Enter") {
     checkInput();
+    document.getElementById("inputField").value = "";
+    document.getElementById("discriptionField").value = "";
+    advancedSettings.classList.remove("show");
+    document.getElementById("priorityCheck").checked = false;
   }
 });
 
