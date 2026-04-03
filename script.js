@@ -231,9 +231,7 @@ function highPriorityTasks() {
 }
 
 function showAll() {
-  container.innerHTML = '';
-  tasks.forEach(task => renderTask(task));
-    updateCounters()
+  location.reload();
 }
 
 function setActiveFilter(btn) {
