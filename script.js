@@ -1,14 +1,24 @@
 /*dark mode*/
-function darkModus() {
-  document.body.classList.toggle("dark");
-  let darkModusButton = document.getElementById("theme");
-  if (darkModusButton) {
-    darkModusButton.textContent = document.body.classList.contains("dark")
-      ? "☀️"
-      : "🌙";
-  }
-}
 
+
+function darkModus() {
+   let isDark;
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    isDark = false;
+  } else {
+    document.body.classList.add('dark');
+    isDark = true;
+  }
+  localStorage.setItem('darkMode', isDark);
+  return isDark;
+}
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('darkMode');
+  if (saved === 'true') {
+    document.body.classList.add('dark');
+  }
+});
 /* buttons event listener */
 
 let sidebar = document.getElementById("sidebar");
@@ -287,7 +297,9 @@ document.getElementById("inputField").addEventListener("keydown", function(e) {
 let deleteAllButton = document.getElementById("deleteAllButton")
 
 deleteAllButton.addEventListener("click", function () {
+  const darkMode = localStorage.getItem('darkMode');
   localStorage.clear();
+  localStorage.setItem('darkMode', darkMode);
   let elements = document.querySelectorAll(".task");
   elements.forEach(function (element) {
     element.remove();
@@ -302,9 +314,4 @@ function onPageLoad() {
   updateCounters()
 }
 
-
-
 window.onload = onPageLoad;
-
-
-
